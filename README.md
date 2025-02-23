@@ -4,6 +4,8 @@
         npx prisma migrate dev --name "init"
     2. Command to seed the database:
         npx prisma db seed
+    1. New Member Response
+    ![New Member Response](<./screenshots/newMemberResponse.png>)
 
 # Misc Notes:
 
