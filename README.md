@@ -1,11 +1,6 @@
 # Main Notes:
 
-    1. Migration command used to create the database:
-        npx prisma migrate dev --name "init"
-    2. Command to seed the database:
-        npx prisma db seed
-    1. New Member Response
-    ![New Member Response](./screenshots/newMemberResponse.png)
+    Screenshot for API executions in "screenshots" folder.
 
 # Misc Notes:
 
@@ -17,7 +12,7 @@
         1. In terminal 1: npm run start:dev
         2. Open Docker Desktop
         3. In terminal 2: docker-compose up
-        4. open localhost:3000
+        4. open localhost:3000/api
 
     Guide used for application creation:
         https://www.prisma.io/blog/nestjs-prisma-rest-api-7D056s1BmOL0

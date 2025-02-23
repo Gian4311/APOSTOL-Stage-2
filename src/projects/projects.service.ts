@@ -16,6 +16,50 @@ export class ProjectsService {
     return `This action returns all projects`;
   }
 
+  async findMembers(id: number) {
+    return this.prisma.members.findMany( {
+
+      where: {
+        member_projects: { some: { project_id: Number( id ) } }
+      },
+      select: {
+        id: true,
+        name: true,
+        role: true,
+        member_projects: {
+          select: {
+            assigned_at: true
+          }
+        },
+      },
+      
+    } ).then( data => {
+
+      if( data.length === 0 ) throw new Error( "404" );
+      return data.reduce< {
+        id: number,
+        name: string,
+        role: string,
+        assigned_at: Date
+      }[] >( ( array, member ) => {
+
+        array.push( ...member.member_projects.map( ( { assigned_at } ) => { return {
+          id: member.id,
+          name: member.name,
+          role: member.role,
+          assigned_at
+        } } ) )
+        return array;
+
+      }, [] );
+
+    } ).catch( error => {
+
+      return `${ error }. Project does not exist.`;
+
+    } );
+  }
+
   findOne(id: number) {
     return `This action returns a #${id} project`;
   }

@@ -13,7 +13,7 @@ export class MemberProjectsService {
   }
 
   findAll() {
-    return `This action returns all memberProjects`;
+    return this.prisma.member_projects.findMany();
   }
 
   findOne(id: number) {

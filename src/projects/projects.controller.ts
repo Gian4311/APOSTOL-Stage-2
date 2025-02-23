@@ -19,6 +19,11 @@ export class ProjectsController {
     return this.projectsService.findAll();
   }
 
+  @Get(':id/members')
+  findMembers(@Param('id') id: string) {
+    return this.projectsService.findMembers(+id);
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.projectsService.findOne(+id);
