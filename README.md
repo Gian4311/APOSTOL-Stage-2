@@ -6,6 +6,7 @@
         npx prisma db seed
     1. New Member Response
     ![New Member Response](<./screenshots/newMemberResponse.png>)
+    ![New Member Response](https://github.com/Gian4311/APOSTOL-Stage-2/blob/main/screenshots/newMemberResponse.png?raw=true)
 
 # Misc Notes:
 
